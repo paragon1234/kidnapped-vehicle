@@ -83,7 +83,7 @@ Please note that due to the random numbers generated in certain portions of my a
 
 ## Results
 ### Performance/Accuracy
-The particle filter met the requirements, which were 1 meter in error for x and y translations, 0.05 rad in error for yaw, and 45 seconds of runtime for the particle filter. 
+The particle filter met the requirements, which were 1 meter in error for x and y translations, 0.05 rad in error for yaw, and 50 seconds of runtime for the particle filter. 
 Also, all the calculations were performed in run-time.
 
 
