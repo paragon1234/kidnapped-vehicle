@@ -9,6 +9,8 @@ A robot(car) has been kidnapped and stationed at an unknown location. It has to 
 * a list of landmarks in the location.
 
 ### Particle Filter Input
+The simulator provides data, such as observations and controls.
+
 #### The Map
 `map_data.txt` present in the `data` directory, includes the position of landmarks (in meters). Each row has three columns
 1. x position
