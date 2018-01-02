@@ -40,6 +40,7 @@ These include:
 
 ## Project Design and Implementation
 In this C++ project, a two-dimensional particle filter is used to help localize a car placed in an somewhat unknown location. Along with sufficient accuracy to have localized the vehicle within a small amount of space, the project also required having an efficient algorithm, as there was a time limit to how long it could run for without failing the given parameters.
+-http://robots.stanford.edu/papers/thrun.pf-in-robotics-uai02.pdf
 
 ### Project Steps
 1. A less accurate map data (similar to GPS) is used to initialize the car's location, 
