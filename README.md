@@ -16,12 +16,12 @@ A robot(car) has been kidnapped and stationed at an unknown location. It has to 
 3. landmark id
 
 #### Control Data
-control_data contains 
+control_data contains: 
 1. vehicle speed (in meters per second)
 2. vehicle yaw rate (in radians per second)
 
 #### Observation Data
-At each timestep (as vehicle move), observation data for all landmarks that are sufficiently close to the vehicle. Each row in these files corresponds to a single landmark. The two columns represent:
+At each timestep (as vehicle move), observation data for all landmarks that are sufficiently close to the vehicle. Each row in these files corresponds to a single landmark. It contains:
 1. x distance to the landmark in meters (right is positive) RELATIVE TO THE VEHICLE.
 2. y distance to the landmark in meters (forward is positive) RELATIVE TO THE VEHICLE.
 
@@ -44,15 +44,16 @@ In this C++ project, a two-dimensional particle filter is used to help localize 
 ### Project Steps
 1. A less accurate map data (similar to GPS) is used to initialize the car's location, 
 2. predict the new location based on velocity and yaw (turn) rate, 
-3. transform sensor observation points into map coordinates, associated these observations with landmarks on the map, 
-4. calculate the likelihood that a given particle made those observation based off of the landmark positions in the map. 
-5. The particles were then re-sampled based on how likely a given particle was to have made the observations of the landmarks, which helps to more accurately localize the vehicle.
+3. transform sensor observation points into map coordinates,
+4. associate these transformed observations with landmarks on the map, 
+5. calculate the likelihood that a given particle made those observation based off of the landmark positions in the map. 
+6. The particles were then re-sampled based on how likely a given particle was to have made the observations of the landmarks, which helps to more accurately localize the vehicle.
 
 ### Project Implementation
-All steps within 'particle_filter.cpp' in the 'src' folder
+All steps within 'particle_filter.cpp' file in the 'src' folder
 * init function- estimate position from GPS data using particle filters, add random noise
 * prediction function- predict position based on adding velocity and yaw rate to particle filters, add random noise
-* updateWeights function step1- Transformation of observation points to map coordinates (given in vehicle coordinates)
+* updateWeights function step1- Transformation of observation points from vehicle coordinates to map coordinates
 * updateWeights function step2- Find map landmarks within the sensor range
 * updateWeights function step3- Association of landmarks to the transformed observation points
         This step calls dataAssociation function
